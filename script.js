@@ -170,6 +170,99 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    // TARJETAS INTERACTIVAS DEL EQUIPO (EFECTO FLIP)
+    const teamCards = document.querySelectorAll(".team-card");
+
+    // Roles correspondientes a cada integrante.
+    const teamRoles = {
+        "Adrián Jimenez": "Mesero y relacionista público",
+        "Adrián Jiménez": "Mesero y relacionista público",
+        "Gabriel Morales": "Mesero",
+        "Nicolás Castillo": "Recepcionista",
+        "Eduardo Guzmán": "Mesero y animador",
+        "Leonardo Salgado": "Barman",
+        "Santiago Mendez": "BTL y mesero",
+        "Santiago Méndez": "BTL y mesero",
+        "Alejandro Untuña": "Mesero",
+        "Valeria Rodríguez": "Manager y mesera",
+        "Emilia Rosío": "Recepcionista",
+        "Victoria Hayes": "Animadora e impulsadora",
+        "Isabela Cobos": "Bartender",
+        "Renata Verdezoto": "Mesera y marketing"
+    };
+
+    teamCards.forEach((card) => {
+
+        const heading = card.querySelector("h3");
+
+        if (!heading) return;
+
+        const name = heading.textContent.trim();
+        const role = teamRoles[name];
+
+        if (!role) return;
+
+        // Evitar duplicar el contenido.
+        if (card.querySelector(".team-card-inner")) return;
+
+        // Contenedor de las dos caras.
+        const inner = document.createElement("div");
+        inner.className = "team-card-inner";
+
+        // Cara frontal: nombre.
+        const front = document.createElement("div");
+        front.className = "team-card-front";
+
+        // Cara posterior: cargo.
+        const back = document.createElement("div");
+        back.className = "team-card-back";
+
+        const roleText = document.createElement("p");
+        roleText.textContent = role;
+
+        front.appendChild(heading);
+        back.appendChild(roleText);
+
+        inner.append(front, back);
+
+        // Incorporar las caras a la tarjeta.
+        card.replaceChildren(inner);
+
+        card.classList.add("team-card--flip");
+
+        // Accesibilidad.
+        card.setAttribute("tabindex", "0");
+        card.setAttribute("role", "button");
+        card.setAttribute("aria-pressed", "false");
+        card.setAttribute(
+            "aria-label",
+            `${name}. ${role}. Pulsa para girar la tarjeta.`
+        );
+
+        // Alternar entre frontal y reverso.
+        const toggleCard = () => {
+            const isFlipped = card.classList.toggle("is-flipped");
+
+            card.setAttribute(
+                "aria-pressed",
+                String(isFlipped)
+            );
+        };
+
+        // Interacción táctil y con mouse.
+        card.addEventListener("click", toggleCard);
+
+        // Compatibilidad con teclado.
+        card.addEventListener("keydown", (event) => {
+            if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                toggleCard();
+            }
+        });
+
+    });
+
+
     // FILTROS DEL CATÁLOGO
     const categoryButtons = document.querySelectorAll(".category-button");
     const productCards = document.querySelectorAll(".product-card");
