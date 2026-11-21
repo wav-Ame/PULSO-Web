@@ -130,15 +130,56 @@ a{color:inherit;text-decoration:none}
 .professional-card h4{margin:1.1rem 1rem .25rem;font:700 1rem var(--heading)}
 .professional-card p{margin-inline:1rem;color:var(--gray);font-size:.8rem}
 
-/* 8. EQUIPO */
-.team{background:radial-gradient(ellipse at 50% 100%,rgba(121,40,202,.13),transparent 45%),var(--surface)}
-.team-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem}
-.team-card{position:relative;display:flex;min-height:145px;align-items:flex-end;overflow:hidden;padding:1.2rem;border:1px solid var(--border);border-radius:var(--radius);background:radial-gradient(circle at 80% 15%,rgba(168,85,247,.2),transparent 42%),linear-gradient(145deg,#20202B,#111218);transition:transform var(--ease),border-color var(--ease),box-shadow var(--ease)}
-.team-card::before{position:absolute;top:-45px;right:-35px;width:120px;height:120px;border:1px solid rgba(168,85,247,.22);border-radius:50%;content:""}
-.team-card h3{position:relative;z-index:1;font:700 .95rem var(--heading)}
-.team-card:hover{border-color:rgba(183,255,0,.35);box-shadow:0 12px 30px rgba(0,0,0,.25),var(--glow-green);transform:translateY(-5px)}
+/* EQUIPO */
+.team-grid {display: grid;grid-template-columns: repeat(4, minmax(0, 1fr));gap: 16px;width: 100%;margin-top: 55px;}
+.team-card {height: 145px;min-width: 0;perspective: 1000px;background: transparent;border: none;padding: 0;overflow: visible;cursor: pointer;}
+.team-card-inner {position: relative;width: 100%;height: 100%;transform-style: preserve-3d;transition: transform 800ms cubic-bezier(0.2, 0.7, 0.2, 1);}
+.team-card:hover .team-card-inner,
+.team-card:focus .team-card-inner {transform: rotateY(180deg);}
+.team-card-front,
+.team-card-back {position: absolute;inset: 0;display: flex;align-items: center;justify-content: center;padding: 20px;border-radius: 18px;border: 1px solid rgba(244, 244, 245, 0.12);
+    overflow: hidden;backface-visibility: hidden;-webkit-backface-visibility: hidden;
+    transition:
+        border-color 350ms ease,
+        box-shadow 350ms ease;}
+.team-card-front {justify-content: flex-start;background:radial-gradient( circle at 88% 10%,rgba(121, 40, 202, 0.19),transparent 35%),
+        linear-gradient(145deg,#20202B,#111117);}
 
-/* 9. RESERVACIONES Y FORMULARIOS */
+.team-card-front::before {
+    content: "";position: absolute;width: 120px;height: 120px;top: -48px;right: -34px;border: 1px solid rgba(168, 85, 247, 0.25);border-radius: 50%;}
+.team-card-front h3 {position: relative;z-index: 1;margin: 0;color: var(--white);font-family: var(--heading);font-size: 1rem;font-weight: 800;line-height: 1.4;}
+.team-card-back {transform: rotateY(180deg);flex-direction: column;text-align: center;background:radial-gradient(circle at 15% 90%,rgba(183, 255, 0, 0.08),transparent 40%),
+        linear-gradient(145deg,#251637,#111117);
+        border-color: rgba(168, 85, 247, 0.4);}
+.team-card-back::before {content: "PULSO · TEAM";position: absolute;top: 19px;color: var(--green);font-size: 0.62rem;font-weight: 800;letter-spacing: 0.18em;}
+.team-card-back p {position: relative;margin: 0;max-width: 260px;color: var(--white);font-family: var(--body);font-size: 0.95rem;font-weight: 500;line-height: 1.5;}
+.team-card:hover .team-card-front {border-color: rgba(183, 255, 0, 0.55);box-shadow: 0 0 20px rgba(183, 255, 0, 0.08);}
+.team-card:hover .team-card-back {border-color: var(--purple-light);box-shadow: 0 0 24px rgba(121, 40, 202, 0.22);}
+@media (max-width: 950px) {
+    .team-grid {grid-template-columns: repeat(3, minmax(0, 1fr));}
+}
+@media (max-width: 650px) {
+    .team-grid {grid-template-columns: repeat(2, minmax(0, 1fr));gap: 12px;}
+    .team-card {height: 135px;}
+    .team-card-front,
+    .team-card-back {padding: 15px;}
+    .team-card-front h3 {font-size: 0.9rem;}
+    .team-card-back p {font-size: 0.82rem;}
+}
+@media (max-width: 380px) {
+    .team-grid {grid-template-columns: 1fr;}
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .team-card-inner {transition: none;}
+}
+
+.team-card.is-flipped .team-card-inner {
+    transform: rotateY(180deg);
+}
+
+
+/* RESERVACIONES Y FORMULARIOS */
 .reservations{overflow:hidden;background:radial-gradient(ellipse at 10% 50%,rgba(121,40,202,.16),transparent 38%),var(--black)}
 .reservation-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.35rem;max-width:850px;margin-inline:auto;padding:clamp(1.4rem,4vw,2.7rem);border:1px solid rgba(168,85,247,.25);border-radius:28px;background:linear-gradient(145deg,rgba(25,26,35,.96),rgba(15,16,22,.96));box-shadow:0 25px 75px rgba(0,0,0,.28),var(--glow-purple)}
 .form-group{display:flex;min-width:0;flex-direction:column;gap:.45rem}
@@ -155,13 +196,10 @@ a{color:inherit;text-decoration:none}
 #reservation-message-status,#contact-status{grid-column:1/-1;min-height:1.2em;color:var(--green);font-size:.84rem}
 .form-note{grid-column:1/-1;color:var(--muted);font-size:.74rem}
 
-/* 10. CONTACTO */
+/* CONTACTO */
 .contact{background:var(--surface)}
 .contact-content{display:grid;grid-template-columns:1fr;gap:2rem}
 
-/* Distribución editorial en dos columnas.
-   Se asignan posiciones a los elementos existentes del HTML,
-   sin necesidad de modificar la estructura. */
 .contact-information{
   display:grid;
   grid-template-columns:minmax(0,1fr) minmax(0,1fr);
@@ -204,7 +242,7 @@ a{color:inherit;text-decoration:none}
 .contact-form h3{margin-bottom:.5rem;font:700 1.35rem var(--heading)}
 .contact-form button{justify-self:start;border:0}
 
-/* 11. FOOTER */
+/* FOOTER */
 .footer{padding-top:4rem;background:#06070A;border-top:1px solid rgba(168,85,247,.18)}
 .footer-content{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:2.5rem;padding-bottom:3rem}
 .footer-brand img{width:155px;max-height:70px;object-fit:contain;object-position:left center}
@@ -216,12 +254,12 @@ a{color:inherit;text-decoration:none}
 .footer-bottom{padding:1.2rem 1rem;border-top:1px solid var(--border);text-align:center}
 .footer-bottom p{color:var(--muted);font-size:.74rem}
 
-/* 12. FOCO, BRILLO Y MICROINTERACCIONES */
+/* FOCO, BRILLO Y MICROINTERACCIONES */
 .btn-primary:focus-visible,.btn-secondary:focus-visible,.btn-reservation:focus-visible,.category-button:focus-visible,.nav-list a:focus-visible,.ally-card a:focus-visible,.contact-form button:focus-visible,.menu-toggle:focus-visible{outline:2px solid var(--green);outline-offset:4px}
 .product-card::after,.ally-card::after,.professional-card::after{position:absolute;z-index:0;inset:-1px;border-radius:inherit;content:"";opacity:0;background:radial-gradient(circle at 50% 0%,rgba(168,85,247,.16),transparent 65%);transition:opacity var(--ease);pointer-events:none}
 .product-card:hover::after,.ally-card:hover::after,.professional-card:hover::after{opacity:1}
 
-/* 13. CLASES DE ANIMACIÓN PARA INTERSECTION OBSERVER */
+/* CLASES DE ANIMACIÓN PARA INTERSECTION OBSERVER */
 .reveal{opacity:0;transform:translateY(28px);transition:opacity 700ms ease,transform 700ms cubic-bezier(.2,.7,.2,1)}
 .reveal.is-visible{opacity:1;transform:translateY(0)}
 .reveal-left{opacity:0;transform:translateX(-28px);transition:opacity 700ms ease,transform 700ms ease}
@@ -229,7 +267,7 @@ a{color:inherit;text-decoration:none}
 .reveal-right{opacity:0;transform:translateX(28px);transition:opacity 700ms ease,transform 700ms ease}
 .reveal-right.is-visible{opacity:1;transform:translateX(0)}
 
-/* 14. TABLETS Y LAPTOPS */
+/* TABLETS Y LAPTOPS */
 @media(max-width:1100px){
   .header-container{gap:1.2rem}.logo{width:128px}.nav-list{gap:1rem}.nav-list a{font-size:.72rem}
   .product-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
@@ -261,7 +299,7 @@ a{color:inherit;text-decoration:none}
   .footer-contact{grid-column:auto}
 }
 
-/* 15. TELÉFONOS */
+/* TELÉFONOS */
 @media(max-width:560px){
   :root{--header-height:70px;--section-space:4.5rem}
   .contact-information{grid-template-columns:1fr;grid-template-rows:none;row-gap:.45rem}
@@ -318,7 +356,7 @@ a{color:inherit;text-decoration:none}
   .product-info{padding:.8rem}.product-info h3{font-size:.88rem}.product-info p{font-size:.72rem}
 }
 
-/* 16. ACCESIBILIDAD */
+/* ACCESIBILIDAD */
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
