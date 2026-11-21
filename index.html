@@ -1,0 +1,843 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Configuración general del documento -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PULSO Bar & Lounge: gastronomía saludable, bienestar y experiencias nocturnas en Quito.">
+    <meta name="theme-color" content="#08090C">
+    <title>PULSO | Bar & Lounge</title>
+    <!-- Conexión con la hoja de estilos -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- ==========================================
+         1. HEADER / NAVEGACIÓN
+    =========================================== -->
+    <header class="header" id="inicio">
+        <div class="container header-container">
+            <!-- Logotipo -->
+            <a href="#inicio" class="logo" aria-label="PULSO, ir al inicio">
+                <img src="assets/logo/PULSO-logo.png" alt="PULSO Bar & Lounge">
+            </a>
+            <!-- Menú principal -->
+            <nav class="navigation" aria-label="Navegación principal">
+                <ul class="nav-list">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#catalogo">Catálogo</a></li>
+                    <li><a href="#bienestar">Bienestar</a></li>
+                    <li><a href="#equipo">Nuestro equipo</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+            <!-- Acceso a reservaciones -->
+            <a href="#reservaciones" class="btn-reservation">
+                Reservar mesa
+            </a>
+            <!-- Botón del menú móvil -->
+            <button
+                class="menu-toggle"
+                id="menu-toggle"
+                aria-label="Abrir menú"
+                aria-expanded="false"
+                aria-controls="navigation"
+                type="button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO / PRESENTACIÓN -->
+        <section class="hero" id="hero">
+            <div class="container hero-content">
+                <p class="hero-subtitle">
+                    NUTRICIÓN · FITNESS · NIGHTLIFE
+                </p>
+                <h1>
+                    ELEVA TU ENERGÍA.
+                    <span>VIVE EL MOMENTO.</span>
+                </h1>
+                <p class="hero-description">
+                    Una experiencia donde la gastronomía saludable,
+                    el bienestar y la vida nocturna encuentran su equilibrio.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#catalogo" class="btn-primary">
+                        Explorar catálogo
+                    </a>
+                    <a href="#nosotros" class="btn-secondary">
+                        Conoce PULSO
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ======================================
+             3. NOSOTROS
+        ======================================= -->
+
+        <section class="about section" id="nosotros">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="section-subtitle">NUESTRA ESENCIA</p>
+                    <h2>
+                        MÁS QUE UN BAR.
+                        <span>UN ESTILO DE VIDA.</span>
+                    </h2>
+                </div>
+
+                <div class="about-content">
+                    <div class="about-image">
+                        <img
+                            src="assets/images/longue-pulso.png"
+                            alt="Interior de referencia de PULSO Bar & Lounge">
+                    </div>
+
+                    <div class="about-text">
+                        <h3>Bienvenido a PULSO</h3>
+                        <p>
+                            PULSO Bar & Lounge nace como una propuesta
+                            innovadora que combina gastronomía,
+                            entretenimiento nocturno y bienestar.
+                        </p>
+
+                        <p>
+                            Nuestro concepto integra una experiencia
+                            social contemporánea con alternativas
+                            gastronómicas de alto valor nutricional,
+                            servicios fitness y espacios de conexión.
+                        </p>
+
+                        <p>
+                            Creemos que disfrutar, alimentarse bien
+                            y cuidar el cuerpo pueden formar parte
+                            de una misma experiencia.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ======================================
+             4. CATÁLOGO DIGITAL
+        ======================================= -->
+
+        <section class="catalog section" id="catalogo">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="section-subtitle">DESCUBRE NUESTRO MENÚ</p>
+                    <h2>CATÁLOGO <span>PULSO</span></h2>
+                    <p>
+                        Nutrición, sabor y experiencias para cada momento.
+                    </p>
+                </div>
+                <!-- Categorías del catálogo -->
+                <div class="catalog-categories">
+                    <button class="category-button active"
+                        data-category="all">
+                        Todo
+                    </button>
+
+                    <button class="category-button"
+                        data-category="food">
+                        Gastronomía
+                    </button>
+
+                    <button class="category-button"
+                        data-category="functional">
+                        Bebidas Proteicas
+
+                    </button>
+
+                    <button class="category-button"
+                        data-category="alcohol">
+                        Coctelería
+                    </button>
+                </div>
+                <!-- Productos gastronómicos -->
+                <div class="product-grid">
+                    <article class="product-card" data-category="food">
+                        <img
+                            src="assets/images/bowl.png"
+                            alt="Bowl saludable de pollo y quinoa">
+                        <div class="product-info">
+                            <span class="product-category">
+                                GASTRONOMÍA
+                            </span>
+                            <h3>Power Protein Bowl</h3>
+                            <p>
+                                Pollo a la parrilla, quinoa,
+                                aguacate, vegetales y semillas.
+                            </p>
+                            <span class="product-price">$12.50</span>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-category="food">
+                        <img
+                            src="assets/images/fit-burger.png"
+                            alt="Hamburguesa saludable de pollo">
+                        <div class="product-info">
+                            <span class="product-category">
+                                GASTRONOMÍA
+                            </span>
+                            <h3>Fit Burger</h3>
+                            <p>
+                                Hamburguesa de pollo, pan integral,
+                                vegetales frescos y salsa de yogur.
+                            </p>
+                            <span class="product-price">$15.00</span>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-category="food">
+                        <img
+                            src="assets/images/wrap.png"
+                            alt="Wrap de pavo y vegetales">
+                        <div class="product-info">
+                            <span class="product-category">
+                                GASTRONOMÍA
+                            </span>
+                            <h3>Lean Turkey Wrap</h3>
+                            <p>
+                                Tortilla integral, pavo,
+                                espinaca y queso bajo en grasa.
+                            </p>
+                            <span class="product-price">$9.50</span>
+                        </div>
+                    </article>
+                    <!-- Bebidas proteicas -->
+                    <article class="product-card"
+                        data-category="functional">
+                        <img
+                            src="assets/images/berry.png"
+                            alt="Batido de proteína y frutos rojos">
+                        <div class="product-info">
+                            <span class="product-category">
+                                BEBIDA PROTEICA
+                            </span>
+                            <h3>Berry Protein Shake</h3>
+                            <p>
+                                Frutos rojos, proteína,
+                                leche y semillas de chía.
+                            </p>
+                            <span class="product-price">$6.50</span>
+                        </div>
+                    </article>
+
+                    <article class="product-card"
+                        data-category="functional">
+                        <img
+                            src="assets/images/green.png"
+                            alt="Batido verde de frutas">
+                        <div class="product-info">
+                            <span class="product-category">
+                                BEBIDA PROTEICA
+                            </span>
+                            <h3>Green Pulse</h3>
+                            <p>
+                                Espinaca, piña, pepino,
+                                limón y agua de coco.
+                            </p>
+                            <span class="product-price">$5.50</span>
+                        </div>
+                    </article>
+                    <!-- Coctelería -->
+                    <article class="product-card"
+                        data-category="alcohol">
+                        <img
+                            src="assets/images/electric.png"
+                            alt="Cóctel morado de autor">
+
+                        <div class="product-info">
+                            <span class="product-category">
+                                COCTELERÍA
+                            </span>
+                            <h3>Electric Pulse</h3>
+                            <p>
+                                Cóctel de autor con gin,
+                                frutos del bosque y cítricos.
+                            </p>
+                            <span class="product-price">$9.00</span>
+                        </div>
+                    </article>
+
+                    <article class="product-card"
+                        data-category="alcohol">
+                        <img
+                            src="assets/images/mojito.png"
+                            alt="Mojito clásico">
+
+                        <div class="product-info">
+                            <span class="product-category">
+                                COCTELERÍA
+                            </span>
+                            <h3>Classic Mojito</h3>
+                            <p>
+                                Ron, hierbabuena,
+                                limón, azúcar y soda.
+                            </p>
+                            <span class="product-price">$15.00</span>
+                        </div>
+                    </article>
+
+                    <article class="product-card"
+                        data-category="alcohol">
+                        <img
+                            src="assets/images/negroni.png"
+                            alt="Cóctel Negroni">
+                        <div class="product-info">
+                            <span class="product-category">
+                                COCTELERÍA
+                            </span>
+                            <h3>Midnight Negroni</h3>
+                            <p>
+                                Gin, vermut rojo
+                                y bitter italiano.
+                            </p>
+                            <span class="product-price">$20.00</span>
+                        </div>
+                    </article>
+                </div>
+
+                <p class="catalog-note">
+                    Los precios, productos y fotografías son datos
+                    provisionales para la demostración académica.
+                    Las bebidas alcohólicas se destinan exclusivamente
+                    a mayores de edad.
+                </p>
+            </div>
+        </section>
+
+        <!-- ======================================
+             5. BIENESTAR Y SERVICIOS ASOCIADOS
+        ======================================= -->
+
+        <section class="wellness section" id="bienestar">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="section-subtitle">
+                        BIENESTAR Y MOVIMIENTO
+                    </p>
+                    <h2>
+                        CONECTA CON TU
+                        <span>MEJOR VERSIÓN.</span>
+                    </h2>
+                    <p>
+                        Profesionales y aliados que impulsan
+                        un estilo de vida activo y saludable.
+                    </p>
+                </div>
+                <!-- Gimnasios aliados -->
+                <div class="wellness-category">
+                    <h3>Gimnasios aliados</h3>
+                    <div class="allies-grid">
+                        <article class="ally-card">
+                            <img
+                                src="assets/images/gym-ironlab.png"
+                                alt="Referencia del gimnasio IronLab">
+
+                            <h4>IronLab Performance</h4>
+                            <p>
+                                Entrenamiento de fuerza
+                                y acondicionamiento físico.
+                            </p>
+                            <a href="#contacto">
+                                Información de contacto
+                            </a>
+                        </article>
+
+                        <article class="ally-card">
+                            <img
+                                src="assets/images/novafit.png"
+                                alt="Referencia del gimnasio NovaFit">
+                            <h4>NovaFit Club</h4>
+                            <p>
+                                Fitness integral y entrenamiento
+                                personalizado.
+                            </p>
+                            <a href="#contacto">
+                                Información de contacto
+                            </a>
+                        </article>
+
+                        <article class="ally-card">
+                            <img
+                                src="assets/images/athletica.png"
+                                alt="Referencia del gimnasio Athletica">
+                            <h4>Athletica Studio</h4>
+                            <p>
+                                Acondicionamiento físico
+                                y entrenamiento funcional.
+                            </p>
+                            <a href="#contacto">
+                                Información de contacto
+                            </a>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- Nutricionistas -->
+                <div class="wellness-category">
+                    <h3>Nutricionistas aliados</h3>
+                    <div class="professionals-grid">
+                        <article class="professional-card">
+                            <img
+                                src="assets/images/Dra-Andrea-Gómez.webp"
+                                alt="Fotografía provisional de Valentina">
+                            <h4>Dra. Andrea Gómez</h4>
+                            <p>Nutricionista General</p>
+                        </article>
+
+                        <article class="professional-card">
+                            <img
+                                src="assets/images/Dra-Jeanette-Heredia.jpg"
+                                alt="Fotografía provisional de Sebastián">
+                            <h4>Dra. Jeanette Heredia</h4>
+                            <p>Especialista en Nutrición</p>
+                        </article>
+
+                        <article class="professional-card">
+                            <img
+                                src="assets/images/Dra-Mónica-Reyes.webp"
+                                alt="Fotografía provisional de Camila">
+                            <h4>Dra. Mónica Reyes</h4>
+                            <p>Nutricionista Clínica</p>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- Especialistas fitness -->
+                <div class="wellness-category">
+
+                    <h3>Especialistas fitness</h3>
+
+                    <div class="professionals-grid">
+                        <article class="professional-card">
+                            <img
+                                src="assets/images/paul-tapia.png"
+                                alt="Fotografía provisional de Mateo">
+                            <h4>Paul Tapia</h4>
+                            <p>Entrenador de Fisicoculturismo y Nutrición Deportiva</p>
+                        </article>
+
+                        <article class="professional-card">
+                            <img
+                                src="assets/images/darwin-arley.png"
+                                alt="Fotografía provisional de Isabella">   
+                            <h4>Darwin Arley</h4>
+                            <p>Entrenador Personal, Musculación y Fitness</p>
+                        </article>
+
+                        <article class="professional-card">
+                            <img
+                                src="assets/images/salma-nicole.png"
+                                alt="Fotografía provisional de Daniel">
+                            <h4>Salma Nicole</h4>
+                            <p>Preparación física y Yoga</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================
+             6. NUESTRO EQUIPO
+        ======================================= -->
+        <section class="team section" id="equipo">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="section-subtitle">EL EQUIPO DETRÁS DE PULSO</p>
+                    <h2>NUESTRO <span>PERSONAL</span></h2>
+                    <p>
+                        Profesionales que hacen posible
+                        cada experiencia.
+                    </p>
+                </div>
+
+                <div class="team-grid">
+                    <article class="team-card">
+                        <h3>Adrián Jimenez</h3>
+                    </article>
+
+                    <article class="team-card">
+                        <h3>Gabriel Morales</h3>
+                    </article>
+
+                    <article class="team-card">
+                        <h3>Nicolás Castillo</h3>
+                    </article>
+
+                    <article class="team-card">
+                        <h3>Eduardo Guzmán</h3>
+                    </article>
+
+                    <article class="team-card">
+                        <h3>Leonardo Salgado</h3>
+                    </article>
+
+                    <article class="team-card">
+                        <h3>Santiago Mendez</h3>
+                    </article>
+
+                    <article class="team-card">
+                        <h3>Alejandro Untuña</h3>
+                    </article>
+
+                    <article class="team-card">
+                        <h3>Valeria Rodríguez</h3>
+                    </article>
+
+                    <article class="team-card">
+                        <h3>Emilia Rosío</h3>
+                    </article>
+
+                    <article class="team-card">
+                        <h3>Victoria Hayes</h3>
+                    </article>
+
+                    <article class="team-card">
+                        <h3>Isabela Cobos</h3>
+                    </article>
+
+                    <article class="team-card">
+                        <h3>Renata Verdezoto</h3>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================
+             8. RESERVACIONES
+        ======================================= -->
+
+        <section class="reservations section" id="reservaciones">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="section-subtitle">
+                        TU EXPERIENCIA COMIENZA AQUÍ
+                    </p>
+                    <h2>RESERVA TU <span>MESA.</span></h2>
+                    <p>
+                        Completa tus datos y solicita
+                        una reservación en PULSO.
+                    </p>
+                </div>
+
+
+                <form class="reservation-form" id="reservation-form">
+                    <div class="form-group">
+                        <label for="customer-name">
+                            Nombre completo
+                        </label>
+                        <input
+                            type="text"
+                            id="customer-name"
+                            name="customerName"
+                            placeholder="Ingresa tu nombre"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="customer-email">
+                            Correo electrónico
+                        </label>
+                        <input
+                            type="email"
+                            id="customer-email"
+                            name="customerEmail"
+                            placeholder="correo@ejemplo.com"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="customer-phone">
+                            Número de teléfono
+                        </label>
+                        <input
+                            type="tel"
+                            id="customer-phone"
+                            name="customerPhone"
+                            placeholder="Tu número de contacto"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reservation-date">
+                            Fecha
+                        </label>
+                        <input
+                            type="date"
+                            id="reservation-date"
+                            name="reservationDate"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reservation-time">
+                            Hora
+                        </label>
+                        <input
+                            type="time"
+                            id="reservation-time"
+                            name="reservationTime"
+                            min="18:00"
+                            max="23:59"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="guests">
+                            Número de personas
+                        </label>
+                        <input
+                            type="number"
+                            id="guests"
+                            name="guests"
+                            min="1"
+                            max="12"
+                            value="2"
+                            required>
+                    </div>
+
+                    <div class="form-group form-group-full">
+                        <label for="reservation-message">
+                            Comentarios adicionales
+                        </label>
+
+                        <textarea
+                            id="reservation-message"
+                            name="message"
+                            placeholder="¿Alguna solicitud especial?"></textarea>
+
+                    </div>
+
+
+                    <div class="form-group form-group-full">
+                        <label class="checkbox-label">
+                            <input
+                                type="checkbox"
+                                id="age-confirmation"
+                                required>
+                            Confirmo que soy mayor de 18 años.
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn-primary">
+                        Solicitar reservación
+                    </button>
+                    <p
+                        id="reservation-message-status"
+                        aria-live="polite">
+                    </p>
+                    <p class="form-note">
+                        Formulario demostrativo. Las solicitudes
+                        no se enviarán hasta conectar el backend.
+                    </p>
+                </form>
+            </div>
+        </section>
+
+        <!-- ======================================
+             9. UBICACIÓN Y CONTACTO
+        ======================================= -->
+        <section class="contact section" id="contacto">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="section-subtitle">VISÍTANOS</p>
+                    <h2>ENCUENTRA <span>PULSO.</span></h2>
+                </div>
+
+
+                <div class="contact-content">
+                    <div class="contact-information">
+                        <h3>Ubicación</h3>
+                        <p>
+                            Sector financiero de Quito,
+                            cerca de Quicentro Shopping.
+                        </p>
+                        <p>
+                            Av. República del Salvador y
+                            Portugal, Quito, Ecuador.
+                        </p>
+
+                        <h3>Horarios de atención</h3>
+                        <p>
+                            Martes a domingo
+                            <br>
+                            18:00 - 02:00
+                        </p>
+                        <h3>Recepción</h3>
+                        <p>
+                            Teléfono demostrativo:
+                            +593 2 600 0000
+                        </p>
+                        <h3>Gimnasios aliados</h3>
+                        <p>
+                            IronLab Performance:
+                            +593 99 100 0001
+                        </p>
+                        <p>
+                            NovaFit Club:
+                            +593 99 100 0002
+                        </p>
+                        <p>
+                            Athletica Studio:
+                            +593 99 100 0003
+                        </p>
+                        <h3>Nutricionistas y especialistas</h3>
+                        <p>
+                            Atención mediante solicitud
+                            de contacto con nuestros aliados.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Formulario de contacto -->
+                <form class="contact-form" id="contact-form">
+                    <h3>Contáctanos</h3>
+                    <label for="contact-name">
+                        Nombre
+                    </label>
+                    <input
+                        type="text"
+                        id="contact-name"
+                        name="name"
+                        required>
+                    <label for="contact-email">
+                        Correo electrónico
+                    </label>
+                    <input
+                        type="email"
+                        id="contact-email"
+                        name="email"
+                        required>
+                    <label for="contact-subject">
+                        Motivo de contacto
+                    </label>
+
+                    <select
+                        id="contact-subject"
+                        name="subject"
+                        required>
+
+                        <option value="">
+                            Selecciona un motivo
+                        </option>
+
+                        <option value="general">
+                            Información general
+                        </option>
+
+                        <option value="gym">
+                            Gimnasios aliados
+                        </option>
+
+                        <option value="nutrition">
+                            Nutricionistas
+                        </option>
+
+                        <option value="fitness">
+                            Especialistas fitness
+                        </option>
+
+                        <option value="other">
+                            Otro motivo
+                        </option>
+                    </select>
+
+
+                    <label for="contact-message">
+                        Mensaje
+                    </label>
+
+                    <textarea
+                        id="contact-message"
+                        name="message"
+                        required>
+                    </textarea>
+
+                    <button type="submit">
+                        Enviar mensaje
+                    </button>
+
+                    <p
+                        id="contact-status"
+                        aria-live="polite">
+                    </p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- ==========================================
+         10. FOOTER
+    =========================================== -->
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <img
+                    src="assets/logo/PULSO-logo.png"
+                    alt="Logotipo de PULSO">
+                <p>
+                    Nutrición, bienestar y vida nocturna
+                    en una misma experiencia.
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Explora</h3>
+                <a href="#inicio">Inicio</a>
+                <a href="#nosotros">Nosotros</a>
+                <a href="#catalogo">Catálogo</a>
+                <a href="#bienestar">Bienestar</a>
+                <a href="#reservaciones">Reservaciones</a>
+            </div>
+
+            <div class="footer-social">
+                <h3>Síguenos</h3>
+
+                <a href="#" aria-label="Instagram de PULSO">
+                    Instagram
+                </a>
+                <a href="#" aria-label="Facebook de PULSO">
+                    Facebook
+                </a>
+                <a href="#" aria-label="TikTok de PULSO">
+                    TikTok
+                </a>
+            </div>
+
+
+            <div class="footer-contact">
+                <h3>Contacto</h3>
+                <p>Quito, Ecuador</p>
+                <p>18:00 - 02:00</p>
+                <p>+593 2 600 0000</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>
+                © 2026 PULSO Bar & Lounge.
+                Proyecto académico demostrativo.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Archivo JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>
